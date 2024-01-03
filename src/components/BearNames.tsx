@@ -5,7 +5,7 @@ import { styles } from "../styles";
 
 export const BearNames = () => {
   console.log("BearNames renders");
-  const names = useBearMeals(useShallow(state => Object.keys(state)));
+  const names = useBearMeals(useShallow((state) => Object.keys(state)));
 
   const handlePizza = () => {
     useBearMeals.setState({
@@ -14,7 +14,7 @@ export const BearNames = () => {
   };
 
   return (
-    <View>
+    <View style={styles.componentContainer}>
       <Text style={{ ...styles.text24, color: "tomato" }}>Bear Names</Text>
       <Text style={styles.text24}>{names.join(", ")}</Text>
       <Button title="papa wants pizza" onPress={handlePizza} />

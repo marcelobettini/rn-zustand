@@ -4,10 +4,10 @@ import { useBearMeals } from "../store/useBearMeals";
 import { useShallow } from "zustand/react/shallow";
 export const BearMeals = () => {
   console.log("BearMeals renders");
-  const meals = useBearMeals(useShallow(state => Object.values(state)));
+  const meals = useBearMeals(useShallow((state) => Object.values(state)));
   return (
-    <View>
-      <Text style={{ ...styles.text24, color: "violet" }}>Bear Meals</Text>
+    <View style={styles.componentContainer}>
+      <Text style={{ ...styles.text24, color: "blue" }}>Bear Meals</Text>
       <Text style={styles.text24}>{meals.join(", ")}</Text>
     </View>
   );
